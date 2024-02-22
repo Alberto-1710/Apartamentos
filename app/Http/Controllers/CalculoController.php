@@ -15,7 +15,7 @@ public function calculo($area, $numpiso=null){
         return $precioFinal;
     }else{
         $numpiso = 1;
-        $preciobase = 1500;
+        $preciobase = 150;
         $precioFinal = $area*$preciobase;
         return $precioFinal;
     }
