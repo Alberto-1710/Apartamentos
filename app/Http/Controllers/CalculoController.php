@@ -15,17 +15,17 @@ public function calculo($area, $numpiso=null){
             $aumento = 1.001; //0.1% + 1
             $preciobase = 1500 * pow( $aumento, ($numpiso-1));
             $precioFinal = $area * $preciobase;
-            return $precioFinal;
+            return view('calcular', compact('area', 'numpiso','precioFinal'));
         }else{
             return 'ERROR: el edificio solo cuenta con 12 niveles';
-        }
-        
+        }        
     }else{
         $preciobase = 1500;
         $numpiso = 1;
         $precioFinal = $area*$preciobase;
-        return $precioFinal;
+        return view('calcular', compact('area', 'numpiso','precioFinal'));
+        
     }
-    
+    //return view('calcular', compact('precioFinal'));
 }
 }
