@@ -39,4 +39,21 @@ public function calculo($area, $numpiso=null){
         $propiedades = Propiedad::all(); //metodo que devuelve todos los registros en la base de datos
         return view('mostrarpropiedades', compact('propiedades'));
     }
+
+    public function agregarduenio(){
+        return view('insertarduenio');
+    }
+
+    public function store(Request $request){ //para guardar la informacion que insertaremos en duenios
+        $nvoDuenio = new Duenio();
+        $nvoDuenio->id;
+        $nvoDuenio->nombre = $request->input('nombre');
+        $nvoDuenio->apellido = $request->input('apellido');
+        $nvoDuenio->correo = $request->input('correo');
+        $nvoDuenio->save();
+
+        $duenios = Duenio::all();
+
+        return redirect('/duenios/mostrar'); //Regresar a la vista mostrar
+    }
 }

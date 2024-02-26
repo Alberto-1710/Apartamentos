@@ -20,6 +20,10 @@ use App\Http\Controllers\CalculoController;
 
 Route::get('/calcularPrecio/{area}/{numpiso?}', [CalculoController::class, 'calculo']);
 
-Route::get('/mostrarDuenios', [CalculoController::class, 'mostrarduenios'])->name('duenios');
+Route::get('/duenios/mostrar', [CalculoController::class, 'mostrarduenios'])->name('duenio.home');
 
-Route::get('/mostrarPropiedades', [CalculoController::class, 'mostrarpropiedades'])->name('propiedades');
+Route::get('/propiedades/mostrar', [CalculoController::class, 'mostrarpropiedades'])->name('propiedad.home');
+
+Route::get('/duenios/insertar', [CalculoController::class, 'agregarduenio'])->name('duenio.agregar');
+
+Route::post('/propiedades/guardar', [CalculoController::class, 'store'])->name('duenio.store');
