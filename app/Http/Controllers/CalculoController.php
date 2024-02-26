@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Duenio;
+use App\Models\Propiedad;
 
 class CalculoController extends Controller
 {
@@ -27,4 +29,14 @@ public function calculo($area, $numpiso=null){
         
     }
 }
+
+    public function mostrarduenios(){
+        $duenios = Duenio::all(); //metodo que devuelve todos los registros en la base de datos
+        return view('mostrarduenios', compact('duenios'));
+    }
+
+    public function mostrarpropiedades(){
+        $propiedades = Propiedad::all(); //metodo que devuelve todos los registros en la base de datos
+        return view('mostrarpropiedades', compact('propiedades'));
+    }
 }

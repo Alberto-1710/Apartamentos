@@ -19,3 +19,7 @@ use App\Http\Controllers\CalculoController;
 }); */
 
 Route::get('/calcularPrecio/{area}/{numpiso?}', [CalculoController::class, 'calculo']);
+
+Route::get('/mostrarDuenios', [CalculoController::class, 'mostrarduenios'])->name('duenios');
+
+Route::get('/mostrarPropiedades', [CalculoController::class, 'mostrarpropiedades'])->name('propiedades');
